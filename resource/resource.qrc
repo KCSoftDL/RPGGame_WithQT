@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/picture">
+        <file>草原.jpg</file>
+    </qresource>
+</RCC>
