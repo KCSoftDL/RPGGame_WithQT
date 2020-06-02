@@ -14,8 +14,16 @@ class area_prairie : public QDialog
     Q_OBJECT
 
 public:
-    explicit area_prairie(QWidget *parent = 0,person Player);
+    explicit area_prairie(QWidget *parent = 0);
+//    area_prairie(QWidget *parent = 0,person Player);
     ~area_prairie();
+
+public slots:
+    void setvalue(QVariant data);
+
+signals:
+    void send_data(QVariant);
+
 
 private slots:
     void on_pushButton_clicked();

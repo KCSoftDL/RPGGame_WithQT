@@ -26,7 +26,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    GameGraph *game;
+    GameGraph *game=new GameGraph;
 };
 
 #endif // MAINWINDOW_H

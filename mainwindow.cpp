@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    connect(ui->pushButton,SIGNAL(clicked(bool)), this,SLOT(on_pushButton_clicked()));
+//    connect(ui->pushButton,SIGNAL(clicked(bool)), this,SLOT(on_pushButton_clicked()));
 }
 
 MainWindow::~MainWindow()
@@ -18,9 +18,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    game =new GameGraph(this) ;
+//    game =new GameGraph(this) ;
+    this->hide();
     game->show();
-//    this->hide();
+
 }
 
 void MainWindow::on_pushButton_3_clicked()

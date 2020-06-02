@@ -2,6 +2,7 @@
 #define PLAYERSTATUS_H
 
 #include <QDialog>
+#include"person.h"
 
 namespace Ui {
 class PlayerStatus;
@@ -14,6 +15,9 @@ class PlayerStatus : public QDialog
 public:
     explicit PlayerStatus(QWidget *parent = 0);
     ~PlayerStatus();
+
+public slots:
+    void setvalue(QVariant data);
 
 private:
     Ui::PlayerStatus *ui;
