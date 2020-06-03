@@ -71,6 +71,19 @@
     <string>是否继续前进?</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>220</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>原处刷怪</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections>

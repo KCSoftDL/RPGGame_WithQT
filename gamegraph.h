@@ -28,6 +28,9 @@ public:
 signals:
     void send_data(QVariant);
 
+public slots:
+    void setvalue(QVariant data);
+
 private slots:
     void on_pushButton_6_clicked();
 

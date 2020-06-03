@@ -32,6 +32,8 @@ private slots:
 
     void on_buttonBox_rejected();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::area_prairie *ui;
     monster Boar;

@@ -29,5 +29,4 @@ public:
     string armors;
 };
 
-Q_DECLARE_METATYPE(person)
 #endif // PERSON_H

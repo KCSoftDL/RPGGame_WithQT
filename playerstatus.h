@@ -19,6 +19,9 @@ public:
 public slots:
     void setvalue(QVariant data);
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::PlayerStatus *ui;
 };

@@ -27,3 +27,8 @@ void PlayerStatus::setvalue(QVariant data)
     ui->lineEdit_4->setText((QString)(player.DEF+player.have[2]));
 }
 
+
+void PlayerStatus::on_pushButton_clicked()
+{
+
+}

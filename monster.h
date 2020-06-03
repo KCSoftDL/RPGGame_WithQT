@@ -2,6 +2,7 @@
 #define MONSTER_H
 
 #include"person.h"
+#include <QMessageBox>
 
 class monster
 {

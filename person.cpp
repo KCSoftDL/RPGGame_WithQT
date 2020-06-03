@@ -10,6 +10,7 @@ person::person()
     this->money = 1000;
     for(int i=0;i<10;i++)
         this->have[i]=0;
+    this->hatred =0;
 }
 
 void person::LVUP(int up)

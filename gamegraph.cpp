@@ -2,6 +2,8 @@
 #include "ui_gamegraph.h"
 #include "area_prairie.h"
 
+Q_DECLARE_METATYPE(person)
+
 GameGraph::GameGraph(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::GameGraph)
@@ -10,7 +12,8 @@ GameGraph::GameGraph(QWidget *parent) :
     person Player=person();
 //    connect(ui->pushButton,SIGNAL(clicked(bool)), this,SLOT(on_pushButton_4_clicked()));
     area =new area_prairie(this);
-    connect(this, SIGNAL(send_data(QVariant)), area, SLOT(setvalue(QVariant)));
+    connect(this, SIGNAL(send_data(QVariant)), area, SLOT(setvalue(QVariant))); // send the message of player to area_prairie
+    connect(area, SIGNAL(send_data(QVariant)),this,SLOT(setvalue(QVariant)) );  //receive the message of player from area_prairie
 }
 
 /*
@@ -39,18 +42,34 @@ void GameGraph::on_pushButton_6_clicked()
 
 void GameGraph::on_pushButton_2_clicked()
 {
+//    QMessageBox box;
+//    box.setText("该功能暂未实现可视化，请在控制台交互，谢谢");
+//    box.exec();
+//    weapon_shop(Player);
     QMessageBox box;
-    box.setText("该功能暂未实现可视化，请在控制台交互，谢谢");
+    box.setText("目前武器店暂无新武器，但可花费金币强化武器，每次花费200，攻击力增加100");
     box.exec();
-    weapon_shop(Player);
+    if(Player.money >=200)
+    {
+        Player.money -= 200;
+        Player.have[1] += 100;
+    }
 }
 
 void GameGraph::on_pushButton_3_clicked()
 {
+//    QMessageBox box;
+//    box.setText("该功能暂未实现可视化，请在控制台交互，谢谢");
+//    box.exec();
+//    armors_shop(Player);
     QMessageBox box;
-    box.setText("该功能暂未实现可视化，请在控制台交互，谢谢");
+    box.setText("目前防具店暂无新武器，但可花费金币强化防具，每次花费100，防御力增加50");
     box.exec();
-    armors_shop(Player);
+    if(Player.money >=100)
+    {
+        Player.money -= 200;
+        Player.have[2] += 50;
+    }
 }
 
 void GameGraph::on_pushButton_4_clicked()
@@ -70,7 +89,7 @@ void GameGraph::on_pushButton_4_clicked()
     box.setText("现版本城外区域仅开放草原区域，请见谅，祝您游戏愉快！");
     box.exec();
     area->show();
-    this->hide();
+//    this->hide();
 }
 
 void GameGraph::on_pushButton_5_clicked()
@@ -83,11 +102,17 @@ void GameGraph::on_pushButton_5_clicked()
 
 void GameGraph::on_pushButton_clicked()
 {
-    Player.HP_now =Player.HP_Max;
+    if(Player.money >= 100 | Player.have[0] == 1)
+        Player.HP_now =Player.HP_Max;
     if( Player.have[0] == 0)
     {
         Player.money -= 100;
     }
+}
+
+void GameGraph::setvalue(QVariant data)
+{
+    Player = data.value<person>();
 }
 
 void GameGraph::weapon_shop(person you)
