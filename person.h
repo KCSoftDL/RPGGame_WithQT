@@ -2,6 +2,7 @@
 #define PERSON_H
 
 #include <QMessageBox>
+#include <QVariant>
 #include<string>
 #include<iostream>
 using namespace std;
@@ -28,4 +29,5 @@ public:
     string armors;
 };
 
+Q_DECLARE_METATYPE(person)
 #endif // PERSON_H

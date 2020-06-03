@@ -37,19 +37,19 @@ void area_prairie::on_buttonBox_accepted()
     {
     case 1:
         Slime.battle(player);
-        areanum +=1;
+        player.hatred +=1;
         break;
     case 2:
         Boar.battle(player);
-        areanum ++;
+        player.hatred ++;
         break;
     case 3:
         wolf.battle(player);
-        areanum ++;
+        player.hatred ++;
         break;
     default:
         BOSS_Tauren.BOSS_battle(player);
-        areanum =1;
+        player.hatred =1;
         break;
     }
 

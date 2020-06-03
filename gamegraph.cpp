@@ -2,9 +2,6 @@
 #include "ui_gamegraph.h"
 #include "area_prairie.h"
 
-
-//Q_DECLARE_METATYPE(person);
-
 GameGraph::GameGraph(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::GameGraph)
